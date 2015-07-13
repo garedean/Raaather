@@ -4,14 +4,14 @@ default: &default
 
 development:
   <<: *default
-  database: garedean_development
+  database: raaather_development
 
 test:
   <<: *default
-  database: garedean_test
+  database: raaather_test
 
 production:
   <<: *default
-  database: garedean_production
-  username: garedean
+  database: raaather_production
+  username: raaather
   password: <%= ENV['EXAMPLE_DATABASE_PASSWORD'] %>

@@ -10,10 +10,17 @@
 
   <nav>
     <div class="container">
-      <span class="brand">Raaather</span>
+      <a class="brand" href="/">Raaather</a>
+      <%= yield :new_rather %>
   </nav>
 
-<%= yield %>
+  <div class="container-fluid">
+    <div class="row">
+
+      <%= yield %>
+
+    </div>
+  </div>
 
 </body>
 </html>

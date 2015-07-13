@@ -1,1 +1,41 @@
-TEST
+<% content_for :new_rather do %>
+  <%= link_to "Add", new_rather_path, class: "pull-right" %>
+<% end %>
+
+<ul class="rathers-wrapper">
+  <% @rathers.each do |rather| %>
+
+    <li class="rathers-row">
+      <div class="row">
+
+        <div class="col-sm-7">
+
+          <h4>Would you rather...</h4>
+
+          <div class="col-sm-5">
+            <%= rather.choice_one_text %>
+
+            <%= bootstrap_form_for rather do |f| %>
+              <%= f.primary %>
+            <% end %>
+          </div>
+
+          <div class="col-sm-2">
+            -OR-
+          </div>
+
+          <div class="col-sm-5">
+            <%= rather.choice_two_text %>
+          </div>
+
+        </div>
+
+        <div class="col-sm-5">
+          <h4>Comments</h4>
+        </div>
+
+      </div>
+
+    </li>
+  <% end %>
+</ul>

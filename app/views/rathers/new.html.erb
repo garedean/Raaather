@@ -1,0 +1,13 @@
+<h2>Add a new rather</h2>
+
+<!-- <% if @rather.errors.any? %>
+  <% @rather.errors.full_messages do |message| %>
+    <%= message %>
+  <% end %>
+<% end %> -->
+
+<%= bootstrap_form_for @rather do |f| %>
+  <%= f.text_field :choice_one_text %>
+  <%= f.text_field :choice_two_text %>
+  <%= f.submit %>
+<% end %>
