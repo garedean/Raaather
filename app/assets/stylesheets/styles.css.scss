@@ -7,6 +7,7 @@ body {
 
 nav {
   position: fixed;
+  z-index: 9999;
   top: 0; right: 0; left: 0;
   height: 50px;
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(169,208,63,1)),color-stop(23%,rgba(161,203,63,1)),color-stop(72%,rgba(133,188,65,1)),color-stop(100%,rgba(122,181,65,1)));
@@ -33,4 +34,14 @@ nav {
       border-bottom: 1px solid #bbb;
     }
   }
+}
+
+.choice-pic {
+  width: 100%;
+}
+
+.or-divider {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 3em;
 }

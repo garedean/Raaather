@@ -2,40 +2,62 @@
   <%= link_to "Add", new_rather_path, class: "pull-right" %>
 <% end %>
 
-<ul class="rathers-wrapper">
-  <% @rathers.each do |rather| %>
+<div class="col-sm-12">
+  <ul class="rathers-wrapper">
+    <% @rathers.each do |rather| %>
 
-    <li class="rathers-row">
-      <div class="row">
+      <li class="rathers-row">
+        <div class="row">
 
-        <div class="col-sm-7">
+          <div class="col-sm-7">
+            <div class="row">
+              <h4>Would you rather...</h4>
 
-          <h4>Would you rather...</h4>
+              <div class="col-xs-5">
 
-          <div class="col-sm-5">
-            <%= rather.choice_one_text %>
+                <%= rather.choice_one_votes %> vote
 
-            <%= bootstrap_form_for rather do |f| %>
-              <%= f.primary %>
-            <% end %>
+                <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>"
+
+                <%= rather.choice_one_text %>
+
+                <%= bootstrap_form_for rather do |f| %>
+                  <%= f.hidden_field :choice_one_text %>
+                  <%= f.primary %>
+                <% end %>
+
+
+
+              </div>
+
+              <div class="col-xs-2">
+                <p class="or-divider">OR</p>
+              </div>
+
+              <div class="col-xs-5">
+
+                <%= rather.choice_two_votes %> vote
+
+                <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>"
+
+                <%= rather.choice_two_text %>
+
+                <%= bootstrap_form_for rather do |f| %>
+                <%= f.hidden_field :choice_two_text %>
+                  <%= f.primary %>
+                <% end %>
+              </div>
+
+            </div>
           </div>
 
-          <div class="col-sm-2">
-            -OR-
-          </div>
-
           <div class="col-sm-5">
-            <%= rather.choice_two_text %>
+            <h4>Comments</h4>
           </div>
 
         </div>
 
-        <div class="col-sm-5">
-          <h4>Comments</h4>
-        </div>
-
-      </div>
-
-    </li>
-  <% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
