@@ -18,19 +18,20 @@ class RathersController < ApplicationController
   end
 
   def update
-    rather = Rather.find(params[:id])
-
-    binding.pry
+    @rather = Rather.find(params[:id])
+    @choice = nil
 
     if rather_params[:choice_one_text]
-      choice_one_votes = rather.choice_one_votes
-      rather.update(choice_one_votes: choice_one_votes + 1);
+      @choice = 'choice_one'
+      choice_one_votes = @rather.choice_one_votes
+      @rather.update(choice_one_votes: choice_one_votes + 1);
     else
-      choice_two_votes = rather.choice_two_votes
-      rather.update(choice_two_votes: choice_two_votes + 1);
+      @choice = 'choice_two'
+      choice_two_votes = @rather.choice_two_votes
+      @rather.update(choice_two_votes: choice_two_votes + 1);
     end
 
-    rather.save
+    @rather.save
 
     respond_to do |format|
       format.html { redirect_to :back }

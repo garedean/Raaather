@@ -1,0 +1,10 @@
+var targetRow = $(".rather_<%= @rather.id %>")
+
+if (<%= @choice == "choice_one" %>) {
+    targetRow.find(".<%= @choice %>_votes").text(<%= @rather.choice_one_votes %>);
+  }
+else {
+     targetRow.find(".<%= @choice %>_votes").text(<%=     @rather.choice_two_votes %>);
+  };
+
+targetRow.find("input[type='submit']").attr('disabled','disabled');

@@ -4,9 +4,9 @@
 
 <div class="col-sm-12">
   <ul class="rathers-wrapper">
-    <% @rathers.each do |rather| %>
+    <% @rathers.each.sort.each do |rather| %>
 
-      <li class="rathers-row">
+      <li class="rathers-row rather_<%= rather.id %>">
         <div class="row">
 
           <div class="col-sm-7">
@@ -15,18 +15,18 @@
 
               <div class="col-xs-5">
 
-                <%= rather.choice_one_votes %> vote
+                <span class="choice_one_votes">
+                  <%= rather.choice_one_votes %>
+                </span> votes
 
                 <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>"
 
                 <%= rather.choice_one_text %>
 
-                <%= bootstrap_form_for rather do |f| %>
+                <%= bootstrap_form_for rather, remote: true do |f| %>
                   <%= f.hidden_field :choice_one_text %>
                   <%= f.primary %>
                 <% end %>
-
-
 
               </div>
 
@@ -36,13 +36,15 @@
 
               <div class="col-xs-5">
 
-                <%= rather.choice_two_votes %> vote
+                <span class="choice_two_votes">
+                  <%= rather.choice_two_votes %>
+                </span> votes
 
                 <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>"
 
                 <%= rather.choice_two_text %>
 
-                <%= bootstrap_form_for rather do |f| %>
+                <%= bootstrap_form_for rather, remote: true do |f| %>
                 <%= f.hidden_field :choice_two_text %>
                   <%= f.primary %>
                 <% end %>
