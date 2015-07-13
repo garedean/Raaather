@@ -1,0 +1,22 @@
+I want a page where I can add a ‘Would you rather’ with  two choices. Initially, just use text
+
+I want a page that lists all ‘Would you rather'
+
+I want to be able to vote for a choice by clicking on it.
+
+I want my vote to cause aggregate vote statistics to show without page reload
+
+I want my vote to cause the comments to show without page reload
+
+I want to be able to add a comment to the ‘Would you rather” without page reload
+
+
+Many rather
+Each rather has two choices. Let’s make this a single table with columns
+Each rather has many comments
+
+Rather:
+choice_one_text:text
+choice_one_votes:integer
+choice_two_text:text
+choice_two_votes:integer
