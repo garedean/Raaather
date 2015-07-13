@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150713215739) do
+=======
+ActiveRecord::Schema.define(version: 20150713221354) do
+>>>>>>> 71a2fb28fc65858907f93801b9d43144d429bf4a
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "comments", force: :cascade do |t|
     t.string   "author"
     t.string   "body"
@@ -23,13 +28,17 @@ ActiveRecord::Schema.define(version: 20150713215739) do
     t.integer  "rather_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+  create_table "choices", force: :cascade do |t|
+    t.text    "text"
+    t.integer "votes"
+    t.integer "rather_id"
+>>>>>>> 71a2fb28fc65858907f93801b9d43144d429bf4a
   end
 
   create_table "rathers", force: :cascade do |t|
     t.string   "choice_one_text"
     t.string   "choice_two_text"
-    t.integer  "choice_one_votes"
-    t.integer  "choice_two_votes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

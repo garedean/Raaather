@@ -17,12 +17,12 @@
               <div class="col-xs-5">
 
                 <span class="choice_one_votes">
-                  <%= rather.choice_one_votes %>
+                  <%#= rather.choice_one_votes %>
                 </span> votes
 
                 <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>"
 
-                <%= rather.choice_one_text %>
+                <%#= rather.choice_one_text %>
 
                 <%= bootstrap_form_for rather, remote: true do |f| %>
                   <%= f.hidden_field :choice_one_text %>
@@ -38,12 +38,12 @@
               <div class="col-xs-5">
 
                 <span class="choice_two_votes">
-                  <%= rather.choice_two_votes %>
+                  <%#= rather.choice_two_votes %>
                 </span> votes
 
                 <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>"
 
-                <%= rather.choice_two_text %>
+                <%#= rather.choice_two_text %>
 
                 <%= bootstrap_form_for rather, remote: true do |f| %>
                 <%= f.hidden_field :choice_two_text %>
