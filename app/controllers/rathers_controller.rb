@@ -9,8 +9,15 @@ class RathersController < ApplicationController
 
   def create
     @rather = Rather.new(rather_params)
+    @choice_one = Choice.create(text: rather_params[:choice_one_text])
+
+    @choice_two = Choice.create(text: rather_params[:choice_two_text])
 
     if @rather.save
+
+      @rather.choices.push(@choice_one)
+      @rather.choices.push(@choice_two)
+
       redirect_to root_path
     else
       render "new"
