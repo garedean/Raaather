@@ -50,16 +50,17 @@ nav {
     .col-sm-7 {
       border-right: 1px solid #eee;
     }
-    .col-sm-5 {
-      padding: 0 30px;
-    }
   }
   .comment-wrapper {
+    padding: 0 30px;
+
     form {
       margin-bottom: 20px;
     }
     ul {
       -webkit-padding-start: 0;
+      overflow: auto;
+      max-height: 300px;
     }
     li {
       padding: 10px 0;
