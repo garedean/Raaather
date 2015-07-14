@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body {
-  padding-top: 120px;
+  padding-top: 70px;
 }
 
 nav {
@@ -28,11 +28,13 @@ nav {
 .rathers-wrapper {
   .rathers-row {
     position: relative;
-    padding: 20px 0;
-    border-top: 1px solid #bbb;
+    padding: 8px 0;
     list-style-type: none;
-    &:last-child {
-      border-bottom: 1px solid #bbb;
+    > div:first-child {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      padding: 10px;
     }
   }
 }
@@ -66,4 +68,17 @@ nav {
 }
 .choice_percentage {
   display: none;
+}
+
+body {
+  background-image: image-url("bg-body");
+  background-repeat: repeat;
+  color: #5c6167;
+}
+
+h1 {
+  &.page-header {
+    font-weight: bold;
+    font-size: 3em;
+  }
 }
