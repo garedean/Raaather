@@ -52,3 +52,18 @@ nav {
   bottom: 0;
   right: 0;
 }
+
+.choice-wrapper {
+  font-size: 15px;
+  .description {
+    display: inline-block;
+    padding: 7px 3px;
+  }
+  &.active {
+    border: 3px solid #9eca3f;
+    border-radius: 3px;
+  }
+}
+.choice_percentage {
+  display: none;
+}
