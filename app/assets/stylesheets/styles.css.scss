@@ -5,6 +5,10 @@ body {
   padding-top: 70px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 nav {
   position: fixed;
   z-index: 9999;
@@ -12,8 +16,14 @@ nav {
   height: 50px;
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(169,208,63,1)),color-stop(23%,rgba(161,203,63,1)),color-stop(72%,rgba(133,188,65,1)),color-stop(100%,rgba(122,181,65,1)));
   line-height: 50px;
-  font-size: 25px;
+  font-size: 19px;
   color: white;
+  .brand {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 29px;
+    position: relative;
+    top: 2px;
+  }
   a {
     color: inherit;
     &:hover {
@@ -26,6 +36,7 @@ nav {
 }
 
 .rathers-wrapper {
+  -webkit-padding-start: 0;
   .rathers-row {
     position: relative;
     padding: 8px 0;
@@ -35,6 +46,24 @@ nav {
       border: 1px solid #eee;
       border-radius: 5px;
       padding: 10px;
+    }
+    .col-sm-7 {
+      border-right: 1px solid #eee;
+    }
+    .col-sm-5 {
+      padding: 0 30px;
+    }
+  }
+  .comment-wrapper {
+    form {
+      margin-bottom: 20px;
+    }
+    ul {
+      -webkit-padding-start: 0;
+    }
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
     }
   }
 }
@@ -80,5 +109,12 @@ h1 {
   &.page-header {
     font-weight: bold;
     font-size: 3em;
+  }
+}
+
+input[type="submit"] {
+  &.comment {
+    color: white;
+    background: -webkit-linear-gradient(top,rgba(167,207,63,1) 0,rgba(160,203,63,1) 22%,rgba(129,185,65,1) 80%,rgba(123,181,65,1) 100%);
   }
 }

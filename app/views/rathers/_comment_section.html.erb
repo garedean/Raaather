@@ -1,0 +1,21 @@
+<div class="col-sm-5 comment-wrapper">
+  <h4>Comments</h4>
+
+  <%= form_for [rather, Comment.new], remote: true do |f| %>
+    <div class="input-group">
+      <%= f.text_field :body, class:"form-control", placeholder: "Write a comment" %>
+      <span class="input-group-btn">
+        <%= f.submit "Comment", class:"btn btn-default comment" %>
+      </span>
+    </div><!-- /input-group -->
+  <% end %>
+
+  <ul>
+    <% rather.comments.each do |comment| %>
+      <li>
+        <%= comment.user.email %> says:
+        <%= comment.body %>
+      </li>
+    <% end %>
+  </ul>
+</div>

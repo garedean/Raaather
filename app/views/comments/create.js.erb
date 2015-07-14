@@ -1,0 +1,3 @@
+$(".rather_<%= @rather.id %>").find(".comment-wrapper ul").append("<li><%= @comment.user.email %> says: <%= @comment.body %></li>")
+
+$("#comment_body").val("");

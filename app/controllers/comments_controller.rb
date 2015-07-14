@@ -9,18 +9,25 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @rather = Rather.find(params[:rather_id])
     @comment = Comment.new(comment_params)
+    @rather.comments.push(@comment)
+    @comment.user = @user;
+
     if @comment.save
-      @rather.comments.push(@comment)
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
     else
-    render "new"
+      redirect_to :back
     end
+
   end
 
   private
-  
+
   def comment_params
     params.require(:comment).permit(:body, :rather_id)
   end

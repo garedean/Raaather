@@ -69,17 +69,8 @@
             </div>
           </div>
 
-          <div class="col-sm-5">
-            <h4>Comments</h4>
+          <%= render "comment_section", rather: rather %>
 
-            <ul>
-            <% rather.comments.each do |comment| %>
-              <%= comment.body %>
-            <% end %>
-
-          </ul>
-
-          </div>
         </div>
       </li>
     <% end %>
