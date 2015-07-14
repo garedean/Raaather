@@ -7,6 +7,8 @@ class VotesController < ApplicationController
 
     @choice = Choice.find(vote_params[:choice_id])
     @rather = Rather.find(@choice.rather_id)
+    @rather.vote_cast = true
+    @rather.save
 
     respond_to do |format|
       format.html { redirect_to :back }

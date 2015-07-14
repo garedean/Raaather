@@ -126,3 +126,11 @@ input[type="submit"] {
     background: -webkit-linear-gradient(top,rgba(167,207,63,1) 0,rgba(160,203,63,1) 22%,rgba(129,185,65,1) 80%,rgba(123,181,65,1) 100%);
   }
 }
+
+.disable-clicks {
+  .choice_percentage {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+  }
+}

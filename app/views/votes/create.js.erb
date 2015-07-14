@@ -1,6 +1,6 @@
 var targetRow = $(".rather_<%= @rather.id %>");
 
-//targetRow.find(".choice_<%= @choice.id %>").text("<%= @choice.votes.count %>");
+targetRow.find(".choice_<%= @choice.id %>_votes").text("<%= @choice.votes.count %>");
 
 targetRow.addClass("disable-clicks");
 

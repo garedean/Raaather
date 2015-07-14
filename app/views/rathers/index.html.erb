@@ -8,7 +8,7 @@
   <ul class="rathers-wrapper">
     <% @rathers.each.sort.each do |rather| %>
 
-      <li class="rathers-row rather_<%= rather.id %>">
+      <li class="rathers-row rather_<%= rather.id %> <%= disable_if_user_voted(rather) %>">
         <div class="row">
           <div class="col-sm-7">
             <div class="row">
@@ -17,11 +17,7 @@
 
               <div class="col-xs-5">
 
-                <span>
-                  <%= rather.first_choice.user_voted_for?(current_user) %>
-                </span>
-
-                <span class="choice_<%= rather.first_choice.id %>">
+                <span class="choice_<%= rather.first_choice.id %>_votes">
                   <%= rather.first_choice.votes.count %>
                 </span> votes
 
@@ -36,9 +32,9 @@
                     </span>
                   </div>
 
-                  <!-- <span class="choice_percentage">
-                    <%#= rather.choices[0].get_percentage %>%
-                  </span> -->
+                  <p class="choice_percentage">
+                    <%= rather.choices[0].get_percentage(rather) %>%
+                  </p>
 
                 <% end %>
               </div>
@@ -49,7 +45,7 @@
 
               <div class="col-xs-5">
 
-                <span class="choice_<%= rather.second_choice.id %>">
+                <span class="choice_<%= rather.second_choice.id %>_votes">
                   <%= rather.second_choice.votes.count %>
                 </span> votes
 
@@ -64,9 +60,9 @@
                   </span>
                 </div>
 
-                <!-- <span class="choice_percentage">
-                  <%#= rather.choices[1].get_percentage %>%
-                </span> -->
+                <p class="choice_percentage">
+                  <%= rather.choices[1].get_percentage(rather) %>%
+                </p>
 
                 <% end %>
 
