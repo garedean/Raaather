@@ -10,8 +10,7 @@ class RathersController < ApplicationController
   end
 
   def create
-    binding.pry
-    @rather = Rather.new()
+    @rather = Rather.new(rather_params)
 
     if @rather.save
       redirect_to root_path
@@ -45,7 +44,7 @@ class RathersController < ApplicationController
   private
 
   def rather_params
-    params.require(:rather).permit()
+    params.require(:rather).permit(choices_attributes: [:text])
   end
 
 end

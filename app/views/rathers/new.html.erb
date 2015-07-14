@@ -4,13 +4,7 @@
 
     <%= bootstrap_form_for @rather do |f| %>
 
-      <%= f.fields_for @choice_one do |ff| %>
-        <div class="field">
-          <%= ff.text_field :text %>
-        </div>
-      <% end %>
-
-      <%= f.fields_for @choice_two do |ff| %>
+      <%= f.fields_for :choices do |ff| %>
         <div class="field">
           <%= ff.text_field :text %>
         </div>

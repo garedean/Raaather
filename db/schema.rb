@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150713223035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "choices", force: :cascade do |t|
+    t.text    "text"
+    t.integer "votes", default: 0
+    t.integer "rather_id"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string   "author"
@@ -24,11 +29,6 @@ ActiveRecord::Schema.define(version: 20150713223035) do
     t.integer  "rather_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-
-  create_table "choices", force: :cascade do |t|
-    t.text    "text"
-    t.integer "votes"
-    t.integer "rather_id"
   end
 
   create_table "rathers", force: :cascade do |t|
