@@ -6,4 +6,8 @@ Rails.application.routes.draw do
     resources :choices
     resources :comments
   end
+
+  resources :choices do
+    resources :votes
+  end
 end

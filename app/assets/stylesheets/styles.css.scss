@@ -50,6 +50,13 @@ nav {
     .col-sm-7 {
       border-right: 1px solid #eee;
     }
+    &.disable-clicks {
+      a.choice-link {
+        display: inline-block;
+        pointer-events: none;
+        cursor: default;
+      }
+    }
   }
   .comment-wrapper {
     padding: 0 30px;

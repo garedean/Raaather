@@ -17,13 +17,18 @@
 
               <div class="col-xs-5">
 
+                <span>
+                  <%= rather.first_choice.user_voted_for?(current_user) %>
+                </span>
+
                 <span class="choice_<%= rather.first_choice.id %>">
-                  <%= rather.first_choice.votes %>
+                  <%= rather.first_choice.votes.count %>
                 </span> votes
 
-                <%= link_to rather_choice_path(rather, rather.choices[0]), method: "patch", remote: true do %>
+                <%= link_to choice_votes_path(rather.first_choice.id), method: "post", remote: true, class: "choice-link" do %>
 
-                  <div class="choice-wrapper well active">
+                  <div class="choice-wrapper well choice_<%= rather.first_choice.id %> <%= rather.first_choice.user_voted_for?(current_user) %>">
+
                     <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>
 
                     <span class="description">
@@ -31,9 +36,9 @@
                     </span>
                   </div>
 
-                  <span class="choice_percentage">
-                    <%= rather.choices[0].get_percentage %>%
-                  </span>
+                  <!-- <span class="choice_percentage">
+                    <%#= rather.choices[0].get_percentage %>%
+                  </span> -->
 
                 <% end %>
               </div>
@@ -45,11 +50,13 @@
               <div class="col-xs-5">
 
                 <span class="choice_<%= rather.second_choice.id %>">
-                  <%= rather.second_choice.votes %>
+                  <%= rather.second_choice.votes.count %>
                 </span> votes
 
-                <%= link_to rather_choice_path(rather, rather.choices[1]), method: "patch", remote: true do %>
-                <div class="choice-wrapper well">
+                <%= link_to choice_votes_path(rather.second_choice.id), method: "post", remote: true, class: "choice-link" do %>
+
+                <div class="choice-wrapper well choice_<%= rather.second_choice.id %> <%= rather.second_choice.user_voted_for?(current_user) %>">
+
                   <%= image_tag "http://lorempixel.com/g/200/200", class:"choice-pic" %>
 
                   <span class="description">
@@ -57,9 +64,9 @@
                   </span>
                 </div>
 
-                <span class="choice_percentage">
-                  <%= rather.choices[1].get_percentage %>%
-                </span>
+                <!-- <span class="choice_percentage">
+                  <%#= rather.choices[1].get_percentage %>%
+                </span> -->
 
                 <% end %>
 
