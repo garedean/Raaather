@@ -10,7 +10,9 @@ class Choice < ActiveRecord::Base
   end
 
   def get_percentage(rather)
-    ((votes.count.to_f / get_all_votes(rather).to_f).round(2) * 100.to_f).round(0)
+    if votes.count > 0
+      ((votes.count.to_f / get_all_votes(rather).to_f).round(2) * 100.to_f).round
+    end
   end
 
   def get_all_votes(rather)

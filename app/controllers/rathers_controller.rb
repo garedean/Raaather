@@ -1,4 +1,6 @@
 class RathersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new]
+
   def index
     @rathers = Rather.all
   end
