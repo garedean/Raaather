@@ -27,6 +27,7 @@ nav {
 
 .rathers-wrapper {
   .rathers-row {
+    position: relative;
     padding: 20px 0;
     border-top: 1px solid #bbb;
     list-style-type: none;
@@ -44,4 +45,10 @@ nav {
   margin-top: 80px;
   text-align: center;
   font-size: 3em;
+}
+
+.add-comment {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
