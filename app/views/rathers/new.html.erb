@@ -1,13 +1,22 @@
-<h2>Add a new rather</h2>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h2>Add a new rather</h2>
 
-<!-- <% if @rather.errors.any? %>
-  <% @rather.errors.full_messages do |message| %>
-    <%= message %>
-  <% end %>
-<% end %> -->
+    <%= bootstrap_form_for @rather do |f| %>
 
-<%= bootstrap_form_for @rather do |f| %>
-  <%= f.text_field :choice_one_text %>
-  <%= f.text_field :choice_two_text %>
-  <%= f.submit %>
-<% end %>
+      <%= f.fields_for @choice_one do |ff| %>
+        <div class="field">
+          <%= ff.text_field :text %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for @choice_two do |ff| %>
+        <div class="field">
+          <%= ff.text_field :text %>
+        </div>
+      <% end %>
+
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

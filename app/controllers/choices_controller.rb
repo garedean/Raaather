@@ -1,4 +1,4 @@
 class ChoicesController < ApplicationController
-  def create
+  def update
   end
 end

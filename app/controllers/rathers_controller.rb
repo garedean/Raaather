@@ -5,19 +5,15 @@ class RathersController < ApplicationController
 
   def new
     @rather = Rather.new
+    @choice_one = @rather.choices.build
+    @choice_two = @rather.choices.build
   end
 
   def create
-    @rather = Rather.new(rather_params)
-    @choice_one = Choice.create(text: rather_params[:choice_one_text])
-
-    @choice_two = Choice.create(text: rather_params[:choice_two_text])
+    binding.pry
+    @rather = Rather.new()
 
     if @rather.save
-
-      @rather.choices.push(@choice_one)
-      @rather.choices.push(@choice_two)
-
       redirect_to root_path
     else
       render "new"
@@ -49,7 +45,7 @@ class RathersController < ApplicationController
   private
 
   def rather_params
-    params.require(:rather).permit(:choice_one_text, :choice_two_text, :choice_picked)
+    params.require(:rather).permit()
   end
 
 end
